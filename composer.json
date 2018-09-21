@@ -22,12 +22,18 @@
 		"zendframework/zend-test" : "*",
 		"zendframework/zend-navigation" : "*",
 		"zendframework/zend-mvc-plugin-flashmessenger" : "*",
-		"twbs/bootstrap" : "4.1.3"
+		"twbs/bootstrap" : "4.1.3",
+		"zendframework/zend-db" : "*",
+		"zendframework/zend-form" : "*",
+		"zendframework/zend-i18n" : "*",
+		"zendframework/zend-crypt" : "*",
+		"zendframework/zend-session" : "*"
 	},
 	"autoload" : {
 		"psr-4" : {
 			"Application\\" : "module/Application/src/",
-			"User\\" : "module/User/src"
+			"User\\" : "module/User/src",
+			"Midnet\\" : "module/Midnet/src"
 		}
 	},
 	"autoload-dev" : {

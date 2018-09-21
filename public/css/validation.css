@@ -1,0 +1,22 @@
+/**
+ * Below is used to highlight required/validated fields in the forms
+ * by putting a small green/red/grey border color on the left of the
+ * input field.
+ */
+form input:optional, select:optional, textarea:optional {
+	border-left: 3px solid;
+	border-radius: 5px;
+	border-left-color: #999;
+}
+
+form input:required, select:required, textarea:required {
+	border-left: 3px solid;
+	border-radius: 5px;
+	border-left-color: palegreen;
+}
+
+form input:invalid, select:invalid, textarea:invalid {
+	border-left: 3px solid;
+	border-radius: 5px;
+	border-left-color: salmon;
+}

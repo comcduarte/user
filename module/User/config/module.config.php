@@ -1,8 +1,9 @@
 <?php 
 namespace User;
 
+use User\Controller\UserController;
+use User\Controller\Factory\UserControllerFactory;
 use Zend\Router\Http\Segment;
-use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
     'router' => [
@@ -12,7 +13,7 @@ return [
                 'options' => [
                     'route'    => '/user[/:controller[/:action]]',
                     'defaults' => [
-                        'controller' => Controller\UserController::class,
+                        'controller' => UserController::class,
                         'action'     => 'index',
                     ],
                     'constraints' => [
@@ -25,7 +26,10 @@ return [
     ],
     'controllers' => [
         'factories' => [
-            Controller\UserController::class => InvokableFactory::class,
+            UserController::class => UserControllerFactory::class,
+        ],
+        'aliases' => [
+            'user' => Controller\UserController::class,
         ],
     ],
     'navigation' => [
@@ -33,6 +37,19 @@ return [
             [
                 'label' => 'User',
                 'route' => 'user',
+                'pages' => [
+                    [
+                        'label' => 'Create New User',
+                        'route' => 'user',
+                        'controller' => 'user',
+                        'action' => 'create',
+                    ],
+                    [
+                        'label' => 'List Users',
+                        'route' => 'user',
+                        'action' => 'index',
+                    ],
+                ],
             ],
         ],
     ],

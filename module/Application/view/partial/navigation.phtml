@@ -30,7 +30,7 @@
                         if (! $navHelper->accept($subPage)) {
                             continue;
                         }
-                        printf('<a class="dropdown-item">%s</a>' . "\n", $navHelper->htmlify($subPage));
+                        printf('<a class="dropdown-item" href="%s">%s</a>' . "\n", $subPage->getHref(), $subPage->getLabel());
                     }
                     echo '</div></li>' . "\n";
                 } else {

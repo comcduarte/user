@@ -11,7 +11,7 @@ use Zend\Filter\StripTags;
 use Zend\InputFilter\InputFilter;
 use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
-use Exception;
+use Zend\Stdlib\Exception\RuntimeException;
 
 class DatabaseObject implements InputFilterAwareInterface
 {
@@ -67,7 +67,7 @@ class DatabaseObject implements InputFilterAwareInterface
     
     public function setInputFilter(InputFilterInterface $inputFilter)
     {
-        throw new Exception ("Not Used");
+        throw new RuntimeException("Not Used");
     }
     
     public function getInputFilter()
@@ -101,7 +101,7 @@ class DatabaseObject implements InputFilterAwareInterface
         
         try {
             $resultSet = $statement->execute();
-        } catch (Exception $e) {
+        } catch (RuntimeException $e) {
             return $e;
         }
         
@@ -121,7 +121,7 @@ class DatabaseObject implements InputFilterAwareInterface
         
         try {
             $resultSet = $statement->execute();
-        } catch (Exception $e) {
+        } catch (RuntimeException $e) {
             return $e;
         }
         return $this;
@@ -139,7 +139,7 @@ class DatabaseObject implements InputFilterAwareInterface
         
         try {
             $resultSet = $statement->execute();
-        } catch (Exception $e) {
+        } catch (RuntimeException $e) {
             return $e;
         }
         
@@ -161,7 +161,7 @@ class DatabaseObject implements InputFilterAwareInterface
         
         try {
             $resultSet = $statement->execute();
-        } catch (Exception $e) {
+        } catch (RuntimeException $e) {
             return $e;
         }
         return $this;
@@ -179,7 +179,7 @@ class DatabaseObject implements InputFilterAwareInterface
         
         try {
             $resultSet = $statement->execute();
-        } catch (Exception $e) {
+        } catch (RuntimeException $e) {
             return $e;
         }
         return true;

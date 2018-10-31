@@ -2,6 +2,7 @@
 
 use Zend\Mvc\Application;
 use Zend\Stdlib\ArrayUtils;
+use Zend\Stdlib\Exception\RuntimeException;
 
 /**
  * This makes our life easier when dealing with paths. Everything is relative

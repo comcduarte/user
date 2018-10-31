@@ -10,6 +10,7 @@ namespace Application;
 use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
+use Zend\Navigation\Service\DefaultNavigationFactory;
 
 return [
     'router' => [
@@ -51,7 +52,7 @@ return [
     ],
     'service_manager' => [
         'factories' => [
-            'navigation' => Zend\Navigation\Service\DefaultNavigationFactory::class,
+            'navigation' => DefaultNavigationFactory::class,
         ],
     ],
     'view_manager' => [

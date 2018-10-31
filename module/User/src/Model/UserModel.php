@@ -5,17 +5,19 @@ use Midnet\Model\DatabaseObject;
 
 class UserModel extends DatabaseObject
 {
-    protected $uuid;
-    protected $username;
-    protected $email;
-    protected $password;
-    protected $status;
-    protected $date_created;
-    protected $date_modified;
+    public $UUID;
+    public $USERNAME;
+    public $EMAIL;
+    public $PASSWORD;
+    public $STATUS;
+    public $DATE_CREATED;
+    public $DATE_MODIFIED;
     
     public function __construct($dbAdapter = null)
     {
         parent::__construct($dbAdapter);
-        $this->table = 'user';
+        
+        $this->primary_key = 'UUID';
+        $this->table = 'users';
     }
 }

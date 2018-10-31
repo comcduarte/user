@@ -11,9 +11,9 @@ return [
             'user' => [
                 'type'    => Segment::class,
                 'options' => [
-                    'route'    => '/user[/:controller[/:action]]',
+                    'route'    => '/user[/:controller[/:action[/:uuid]]]',
                     'defaults' => [
-                        'controller' => UserController::class,
+                        'controller' => 'user',
                         'action'     => 'index',
                     ],
                     'constraints' => [
